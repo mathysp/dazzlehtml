@@ -14,37 +14,53 @@ var app = (function(document, $) {
       });
 			_userAgentInit();
 
+
+      $('article').on('touchstart touchend',
+        function () {
+          $(this).addClass('hover');
+        },
+        function () {
+          $(this).removeClass('hover');
+        }
+      );
+      $('article').hover(
+        function () {
+          $(this).addClass('hover');
+        },
+        function () {
+          $(this).removeClass('hover');
+        }
+      );
+
       var maxHeight = 0;
 
       $('.grid article').each(function(){
         if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
       });
 
-      console.log(maxHeight);
       $('.grid article').height(maxHeight);
 
-      $('.grid').masonry({
+      $('.grid').isotope({
         // options
-        itemSelector: 'article'
+        itemSelector: 'article',
+        isResizeBound: true
       });
 
+      function reLayout() {
+        $('.grid').isotope('layout');
+      };
 
-      $('article').hover(
-          function () {
-            $(this).addClass('hover');
-          },
-          function () {
-            $(this).removeClass('hover');
-          }
-      );
+      var resizeTimer;
+      $(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(reLayout, 100);
+      });
 
 
       $('a.totop').click(function(){
         $('html, body').animate({scrollTop: '0px'}, 300);
         event.preventDefault();
       });
-
-
 
 		};
 	return {

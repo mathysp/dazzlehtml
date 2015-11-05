@@ -8590,6 +8590,9 @@ main section article {
     width: 75%;
   }
 }
+article img {
+  width: 100%;
+}
 article.info {
   overflow: hidden;
   position: relative;
@@ -8620,6 +8623,7 @@ article.info.wordpress h2, article.info.drupal h2, article.info.hubspot h2 {
 article.info .title h2 {
   margin-top: 0;
 }
+article.info .body ul, article.info .body li,
 article.info .body p {
   color: #FFFFFF;
   font-size: 0.75rem;
@@ -8670,6 +8674,36 @@ article.work.hover .caption {
   background: rgba(0, 0, 0, 0.75);
 }
 
+@media screen and (min-width: 400px) and (max-width: 540px) {
+  article.info .body ul, article.info .body li, article.info .body p {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 540px) and (max-width: 640px) {
+  article.info .body ul, article.info .body li, article.info .body p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 820px) {
+  article.info .body ul, article.info .body li, article.info .body p {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 820px) and (max-width: 1020px) {
+  article.info .body ul, article.info .body li, article.info .body p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 1750px) {
+  article.info .body ul, article.info .body li, article.info .body p {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 1750px) {
+  article.info .body ul, article.info .body li, article.info .body p {
+    font-size: 1rem;
+  }
+}
 footer .contact,
 footer .copyright {
   display: inline-block;
