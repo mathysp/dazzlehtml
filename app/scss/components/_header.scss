@@ -1,0 +1,48 @@
+.logo{
+  text-align: left;
+  padding: $column-gutter;
+  img{
+    max-height: $column-gutter*2;
+  }
+}
+
+.slogan{
+  background: $oil;
+  color: $white;
+  padding: $column-gutter/2;
+  font-size: rem-calc(18);
+  text-align: center;
+  font-family: $ff-poppins;
+}
+
+
+
+@media #{$medium-up}{
+  .logo{
+    text-align: right;
+  }
+  .logo,
+  .slogan{
+    float:left;
+    width: 50%;
+  }
+  .slogan{
+    text-align: left;
+    line-height: 2;
+    padding: $column-gutter;
+    height: rem-calc(80);
+    font-size: rem-calc(24);
+  }
+}
+
+
+@media #{$large-up}{
+  .logo{
+    width: 25%;
+  }
+  .slogan{
+    line-height: 1.8;
+    font-size: rem-calc(30);
+    width: 75%;
+  }
+}

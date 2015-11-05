@@ -1,0 +1,42 @@
+main{
+  section{
+    article{
+      float:left;
+      width: 100%;
+    }
+  }
+}
+
+
+@media #{$medium-up}{
+  header{
+    height: 80px;
+  }
+  main{
+    section{
+      article{
+        width: 50%;
+        &:nth-child(2n+1){
+          clear:left;
+        }
+      }
+    }
+  }
+}
+
+
+@media #{$large-up}{
+  main{
+    section{
+      article{
+        width: 25%;
+        &:nth-child(2n+1){
+          clear:none;
+        }
+        &:nth-child(4n+1){
+          clear:left;
+        }
+      }
+    }
+  }
+}
