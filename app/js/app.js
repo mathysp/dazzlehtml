@@ -15,11 +15,13 @@ var app = (function(document, $) {
 			_userAgentInit();
 
 
-      $('article').on('touchstart touchend',
+      $('article').on('touchstart',
         function () {
           $(this).addClass('hover');
-        },
-        function () {
+        }
+      );
+      $('article').on('touchend',
+          function () {
           $(this).removeClass('hover');
         }
       );
@@ -34,19 +36,23 @@ var app = (function(document, $) {
 
       var maxHeight = 0;
 
-      $('.grid article').each(function(){
+      /*$('.grid article').each(function(){
         if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
       });
 
-      $('.grid article').height(maxHeight);
+      $('.grid article').height(maxHeight);*/
 
-      $('.grid').isotope({
+      /* $('.grid').isotope({
         // options
         itemSelector: 'article',
-        isResizeBound: true
-      });
+        percentPosition: true,
+        masonry: {
+          // use element for option
+          columnWidth: 'article'
+        }
+      }); */
 
-      function reLayout() {
+     /* function reLayout() {
         $('.grid').isotope('layout');
       };
 
@@ -54,7 +60,7 @@ var app = (function(document, $) {
       $(window).resize(function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(reLayout, 100);
-      });
+      });*/
 
 
       $('a.totop').click(function(){
